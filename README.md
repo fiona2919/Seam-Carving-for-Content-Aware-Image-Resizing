@@ -61,7 +61,7 @@
 <tr>
 <td>
 <span style = "font-size:20px">Original image</span>
-<img src="sea.jpg" width="100%"/>
+<img src="results/sea.jpg" width="100%"/>
 </td>
 </tr>
 </table>
