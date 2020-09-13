@@ -69,15 +69,15 @@
 <tr>
 <td>
 <span style = "font-size:20px">(method 1) cropping</span>
-<img src="SeamCroppingsea.jpg" width="100%"/>
+<img src="results/SeamCroppingsea.jpg" width="100%"/>
 </td>
 <td>
 <span style = "font-size:20px">(method 2) scaling</span>
-<img src="SeamScalingsea.jpg" width="100%"/>
+<img src="results/SeamScalingsea.jpg" width="100%"/>
 </td>
 <td>
 <span style = "font-size:20px">(method 3) seam carving-horizontal</span>
-<img src="SeamCarvingsea.jpg" width="100%"/>
+<img src="results/SeamCarvingsea.jpg" width="100%"/>
 </td>
 </tr>
 </table>
@@ -85,7 +85,7 @@
 <tr>
 <td>
 <span style = "font-size:20px">(method 3) seam carving-vertical</span>
-<img src="SeamCarving2.jpg" width="100%"/>
+<img src="results/SeamCarving2.jpg" width="100%"/>
 </td>
 </tr>
 </table>
@@ -94,7 +94,7 @@
 <tr>
 <td>
 <span style = "font-size:20px">My own image</span>
-<img src="disney.jpg" width="100%"/>
+<img src="results/disney.jpg" width="100%"/>
 </td>
 </tr>
 </table>
@@ -102,19 +102,15 @@
 <tr>
 <td>
 <span style = "font-size:20px">(method 1) cropping</span>
-<img src="SeamCropping.jpg" width="100%"/>
+<img src="results/SeamCropping.jpg" width="100%"/>
 </td>
 <td>
 <span style = "font-size:20px">(method 2) scaling</span>
-<img src="SeamScaling.jpg" width="100%"/>
+<img src="results/SeamScaling.jpg" width="100%"/>
 </td>
 <td>
 <span style = "font-size:20px">(method 3) seam carving-horizontal</span>
-<img src="SeamCarving.jpg" width="100%"/>
+<img src="results/SeamCarving.jpg" width="100%"/>
 </td>
 </tr>
 </table>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
