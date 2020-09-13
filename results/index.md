@@ -1,38 +1,40 @@
-# Seam Carving for Content-Aware Image Resizing
+ï»¿# æ—ä½³è‘³ <span style="color:#FF0070">(102061229)</span>
+
+# Project 3 / Seam Carving for Content-Aware Image Resizing
 
 ## Overview
 > The project is related to resizing pictures by removing pixels in a judicious manner.
 
 ## Implementation
-* À£ÁY¹Ï¤ù¤j¤pªº¤èªk¦³«Ü¦hºØ¡A¥H­nÀ£ÁY¤@¥b¼e«×¬°¨Ò¡A¥i¥H«O¯d­nªº³¡¤À¨ä¾lª½±µ¤Á±¼¡A¤]¥i¥H¨C¨â¦æ¥h±¼¤@¦æ¡C¦ı³o¨Ç¤èªk³£·|¾É­P¹Ï¤ù¥¢¯u¡A¬İ°_¨Ó»P­ì¥»ªº¤£¤@¼Ë¡C¦]¦¹§Ú­Ì­n¿ï¾Ü¥h°£¹Ï¤ù¤¤¸û¤£®e©öª`·N¨ìªº³¡¤À¡A¤]´N¬O·í¾Fªñªº pixel ¬İ°_¨Ó³£®t¤£¦h®É¡A´N¥i¥H¦Ò¼{¥h°£±¼¤@¨Ç¦Ó¤£¼vÅT­ì¥»ªº¼Ë¤l¡C
+* å£“ç¸®åœ–ç‰‡å¤§å°çš„æ–¹æ³•æœ‰å¾ˆå¤šç¨®ï¼Œä»¥è¦å£“ç¸®ä¸€åŠå¯¬åº¦ç‚ºä¾‹ï¼Œå¯ä»¥ä¿ç•™è¦çš„éƒ¨åˆ†å…¶é¤˜ç›´æ¥åˆ‡æ‰ï¼Œä¹Ÿå¯ä»¥æ¯å…©è¡Œå»æ‰ä¸€è¡Œã€‚ä½†é€™äº›æ–¹æ³•éƒ½æœƒå°è‡´åœ–ç‰‡å¤±çœŸï¼Œçœ‹èµ·ä¾†èˆ‡åŸæœ¬çš„ä¸ä¸€æ¨£ã€‚å› æ­¤æˆ‘å€‘è¦é¸æ“‡å»é™¤åœ–ç‰‡ä¸­è¼ƒä¸å®¹æ˜“æ³¨æ„åˆ°çš„éƒ¨åˆ†ï¼Œä¹Ÿå°±æ˜¯ç•¶é„°è¿‘çš„ pixel çœ‹èµ·ä¾†éƒ½å·®ä¸å¤šæ™‚ï¼Œå°±å¯ä»¥è€ƒæ…®å»é™¤æ‰ä¸€äº›è€Œä¸å½±éŸ¿åŸæœ¬çš„æ¨£å­ã€‚
 1. energyRGB.m
-    * ­n¯à§PÂ_¤@ pixel ¬O§_¥i¥H²¾°£¦Ó¤£¼vÅT¾ãÅé¹Ï¤ù¬İ°_¨Óªº¼Ë¤l¡A§Ú­Ì»İ­n¥ı­pºâ¹Ï¤ù¤¤¦U pixel ªº energy ¤j¤p¨Ã¿ï¾Ü²¾°£ energy ¤pªº¡C¦b³oÃä­pºâªº¤è¦¡¬O§Q¥Î¤@ [-1 0 1] ¯x°}»P¨äÂà¸m¯x°}¤À§O¹ï¹Ï¤ù°µ 2D-convolution ±o¨ì¸Ó pixel ¤ô¥­¡B««ª½¬Û®t­È«á°µµ´¹ï­È¬Û¥[¡A¦A±N R¡BG¡BB ªº­È¬Û¥[¡C¦]¦¹¥i¥H±o¨ì¸Ó±i¹Ï¤ù¤W¨C­Ó pixel ªº energy¡C
+    * è¦èƒ½åˆ¤æ–·ä¸€ pixel æ˜¯å¦å¯ä»¥ç§»é™¤è€Œä¸å½±éŸ¿æ•´é«”åœ–ç‰‡çœ‹èµ·ä¾†çš„æ¨£å­ï¼Œæˆ‘å€‘éœ€è¦å…ˆè¨ˆç®—åœ–ç‰‡ä¸­å„ pixel çš„ energy å¤§å°ä¸¦é¸æ“‡ç§»é™¤ energy å°çš„ã€‚åœ¨é€™é‚Šè¨ˆç®—çš„æ–¹å¼æ˜¯åˆ©ç”¨ä¸€ [-1 0 1] çŸ©é™£èˆ‡å…¶è½‰ç½®çŸ©é™£åˆ†åˆ¥å°åœ–ç‰‡åš 2D-convolution å¾—åˆ°è©² pixel æ°´å¹³ã€å‚ç›´ç›¸å·®å€¼å¾Œåšçµ•å°å€¼ç›¸åŠ ï¼Œå†å°‡ Rã€Gã€B çš„å€¼ç›¸åŠ ã€‚å› æ­¤å¯ä»¥å¾—åˆ°è©²å¼µåœ–ç‰‡ä¸Šæ¯å€‹ pixel çš„ energyã€‚
 
 2. findOptSeam.m
-    * ¦pªG¥u¬O±N¤@¹Ï¤ù¤W energy ³Ì¤pªº pixel ²¾°£¦Ó¤£¦Ò¼{¨ä¾FªñÃö«Y¡A±N·|¾É­P¹Ï¤ù¥¢¯u¡A¦]¦¹§Ú­Ì³W©w­n²¾°£ªº¤@¦æ/¦C¤W pixel ¶¡¤£¥i¬Û®t¤Ó»·¡A¥u¯à¬O¦P±Æ©Î¹j¾Àªº¡C¦]¦¹§ä¥X¾Fªñªº³Ì¤p energy ¦A»P¦Û¤v¥»¨­¬Û¥[¡A¦p¦¹³B²z¨ì³Ì«á¤@¦æ/¦C¡A§Y¥i±o¨ì¨C¦æ/¦C¤¤¯à°÷²¾°£ªºpixel¡C
+    * å¦‚æœåªæ˜¯å°‡ä¸€åœ–ç‰‡ä¸Š energy æœ€å°çš„ pixel ç§»é™¤è€Œä¸è€ƒæ…®å…¶é„°è¿‘é—œä¿‚ï¼Œå°‡æœƒå°è‡´åœ–ç‰‡å¤±çœŸï¼Œå› æ­¤æˆ‘å€‘è¦å®šè¦ç§»é™¤çš„ä¸€è¡Œ/åˆ—ä¸Š pixel é–“ä¸å¯ç›¸å·®å¤ªé ï¼Œåªèƒ½æ˜¯åŒæ’æˆ–éš”å£çš„ã€‚å› æ­¤æ‰¾å‡ºé„°è¿‘çš„æœ€å° energy å†èˆ‡è‡ªå·±æœ¬èº«ç›¸åŠ ï¼Œå¦‚æ­¤è™•ç†åˆ°æœ€å¾Œä¸€è¡Œ/åˆ—ï¼Œå³å¯å¾—åˆ°æ¯è¡Œ/åˆ—ä¸­èƒ½å¤ ç§»é™¤çš„pixelã€‚
 	```Matlab
-	% M ¬°­pºâ energy ¬Û¥[¥Î¯x°}
-	for i = 2:row % ±N¾Fªñ³Ì¤pªº energy »P¦Û¤v¬Û¥[
+	% M ç‚ºè¨ˆç®— energy ç›¸åŠ ç”¨çŸ©é™£
+	for i = 2:row % å°‡é„°è¿‘æœ€å°çš„ energy èˆ‡è‡ªå·±ç›¸åŠ 
 		for j = 2:column-1
 			M(i,j) = energy(i,j-1) + min([M(i-1,j-1),M(i-1,j),M(i-1,j+1)]);
 		end
 			end
-	% §ä¥X³Ì«á energy ³Ì¤pªº pixel ¨Ã©¹¦^°l·¹¨ì²Ä¤@¦æ/¦C
+	% æ‰¾å‡ºæœ€å¾Œ energy æœ€å°çš„ pixel ä¸¦å¾€å›è¿½æº¯åˆ°ç¬¬ä¸€è¡Œ/åˆ—
 	[val, idx] = min(M(row, :));
 	for i=row-1:-1:1
 		[~,idx2] = min([M(i,idx-1),M(i,idx),M(i,idx+1)]);
 		idx = idx+idx2-2;
 		optSeamMask(i,idx-1) = 1;
-	% optSeamMask ¬°°O¿ı¥i²¾°£¤§ pixel ¥Î¯x°}¡A¤W­±¼Ğ°Oªº¤èªk¬O±N­n²¾°£ªº¼Ğ¥Ü¬°1¡A¨ä¾l¬°0¡C
+	% optSeamMask ç‚ºè¨˜éŒ„å¯ç§»é™¤ä¹‹ pixel ç”¨çŸ©é™£ï¼Œä¸Šé¢æ¨™è¨˜çš„æ–¹æ³•æ˜¯å°‡è¦ç§»é™¤çš„æ¨™ç¤ºç‚º1ï¼Œå…¶é¤˜ç‚º0ã€‚
 	```
 3. reduceImageByMask.m
-    * ±N«e­±±o¨ìªº¯x°}»P¹Ï¤ù°µ¤ñ¸û¡A¸õ¹L³Q¼Ğ°O­n²¾°£ªº pixel¡A«O¯d³Ñ¤Uªº¡C¥H²¾°£¤@ª½¦æ¬°¨Ò¡G
+    * å°‡å‰é¢å¾—åˆ°çš„çŸ©é™£èˆ‡åœ–ç‰‡åšæ¯”è¼ƒï¼Œè·³éè¢«æ¨™è¨˜è¦ç§»é™¤çš„ pixelï¼Œä¿ç•™å‰©ä¸‹çš„ã€‚ä»¥ç§»é™¤ä¸€ç›´è¡Œç‚ºä¾‹ï¼š
         ```Matlab
         for i=1:height
-            for j=1:width-1 % seamMask ¬°«e­±©Ò±o¨ìªº¬ö¿ı¥Î¯x°}
+            for j=1:width-1 % seamMask ç‚ºå‰é¢æ‰€å¾—åˆ°çš„ç´€éŒ„ç”¨çŸ©é™£
                 if seamMask(i,j)==false 
                     break;
-                else % imageReduced ¬°·s¹Ï¡Fimage ÂÂ¹Ï
+                else % imageReduced ç‚ºæ–°åœ–ï¼›image èˆŠåœ–
                     imageReduced(i,j,:) = image(i,j,:);
                 end
             end
@@ -40,12 +42,12 @@
         end
         ```
     
-    * ­Y­nÀ£ÁYªº½d³ò¸û¤j¡A«h­«½Æ¤W­±´M§ä³Ì¤p energy ¨Ã¥h°£¸Ó¦æ/¦Cªº°Ê§@ª½¨ì³Ñ¤U·Q­nªº¹Ï¤ù¤j¤p§Y¥i¡C
+    * è‹¥è¦å£“ç¸®çš„ç¯„åœè¼ƒå¤§ï¼Œå‰‡é‡è¤‡ä¸Šé¢å°‹æ‰¾æœ€å° energy ä¸¦å»é™¤è©²è¡Œ/åˆ—çš„å‹•ä½œç›´åˆ°å‰©ä¸‹æƒ³è¦çš„åœ–ç‰‡å¤§å°å³å¯ã€‚
 
 ## Installation
-* Other required packages¡Gpictures you want to process.
+* Other required packagesï¼špictures you want to process.
 * How to compile from source?
-    * read in your picture by changing this line in seamCarvingTester.m¡G
+    * read in your picture by changing this line in seamCarvingTester.mï¼š
 	```Matlab
 	image = imread('../data/sea.jpg');
 	```
